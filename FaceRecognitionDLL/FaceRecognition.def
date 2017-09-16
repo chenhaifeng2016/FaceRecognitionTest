@@ -1,0 +1,9 @@
+LIBRARY
+EXPORTS
+CAM_Open
+CAM_Close
+CAM_Status
+CAM_Notify
+CAM_GetPhotoInfo
+CAM_Reset
+CAM_FreePhotoInfo
