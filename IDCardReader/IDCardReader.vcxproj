@@ -95,6 +95,8 @@
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>D:\Boost\1.59\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>./lib/$(TargetName)D.lib</ImportLibrary>
+      <ModuleDefinitionFile>IDCardReader.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -129,6 +131,8 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>D:\Boost\1.59\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ImportLibrary>./lib/$(TargetName).lib</ImportLibrary>
+      <ModuleDefinitionFile>IDCardReader.def</ModuleDefinitionFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -154,17 +158,14 @@
     <None Include="IDCardReader.def" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\IDCardReader.cpp" />
     <ClCompile Include="src\IDReader.cpp" />
     <ClCompile Include="src\SerialCom.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="IDCardReader.h" />
+    <ClInclude Include="include\IDCardReader.h" />
     <ClInclude Include="src\IDReader.h" />
     <ClInclude Include="src\SerialCom.h" />
-    <ClInclude Include="third\wtl\WltRS.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="third\wtl\WltRS.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -5,10 +5,6 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="头文件">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="资源文件">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
@@ -19,17 +15,12 @@
     <Filter Include="文档">
       <UniqueIdentifier>{456d73e8-69a0-4bf3-80fe-041a1a5b9847}</UniqueIdentifier>
     </Filter>
-    <Filter Include="第三方">
+    <Filter Include="DLL">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="third_party">
       <UniqueIdentifier>{d90c3f84-bdfd-4102-b25f-bf1b26a3a3aa}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="第三方\wlt">
-      <UniqueIdentifier>{5cee8c8a-79dd-4f05-9338-a9e76fefba3e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="第三方\wlt\include">
-      <UniqueIdentifier>{9cb01bc1-3af4-452b-b5d8-fb7653dd673b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="第三方\wlt\lib">
-      <UniqueIdentifier>{4126c00a-1666-4bcb-9a22-34717193016f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -47,6 +38,9 @@
     <ClCompile Include="src\SerialCom.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="src\IDCardReader.cpp">
+      <Filter>DLL</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\IDReader.h">
@@ -55,16 +49,8 @@
     <ClInclude Include="src\SerialCom.h">
       <Filter>源文件</Filter>
     </ClInclude>
-    <ClInclude Include="third\wtl\WltRS.h">
-      <Filter>第三方\wlt\include</Filter>
+    <ClInclude Include="include\IDCardReader.h">
+      <Filter>DLL</Filter>
     </ClInclude>
-    <ClInclude Include="IDCardReader.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="third\wtl\WltRS.lib">
-      <Filter>第三方\wlt\lib</Filter>
-    </Library>
   </ItemGroup>
 </Project>

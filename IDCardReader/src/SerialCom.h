@@ -2,6 +2,8 @@
 #define _SERIAL_COM_H_
 
 #include <string>
+
+
 #include <boost/asio.hpp>
 
 class SerialCom

@@ -13,17 +13,35 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="third_party">
+      <UniqueIdentifier>{1d1e1750-e46d-4916-99e6-c227f37983e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\IDCardReader">
+      <UniqueIdentifier>{4b6d71a8-efed-4e01-ae82-8f4d7653a75a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\IDCardReader\include">
+      <UniqueIdentifier>{0aa6ee4b-f700-489c-8cb0-1698283127f6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\FaceRecognitionDLL">
+      <UniqueIdentifier>{95d7dcc1-eb9b-4c14-b57c-0542f40eb054}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\FaceRecognitionDLL\include">
+      <UniqueIdentifier>{8a7bf595-be36-4071-b757-00c08c0477b7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\WtlRs">
+      <UniqueIdentifier>{8c8b1067-e549-46d7-b0f3-b9a0a6a569cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\WtlRs\include">
+      <UniqueIdentifier>{58913581-e85a-45c2-83c8-5d3f8b713861}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\WtlRs\lib">
+      <UniqueIdentifier>{0b03af01-65b4-46b0-9ae5-6b52fcd9877c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="FaceRecognitionTest.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="FaceRecognitionTestDlg.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="stdafx.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -32,6 +50,18 @@
     </ClInclude>
     <ClInclude Include="Resource.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FaceRecognitionTestDlg.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FaceRecognitionTest.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\IDCardReader\include\IDCardReader.h">
+      <Filter>third_party\IDCardReader\include</Filter>
+    </ClInclude>
+    <ClInclude Include="third_party\wtl\WltRS.h">
+      <Filter>third_party\WtlRs\include</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -42,7 +72,10 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
-      <Filter>源文件</Filter>
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="import_lib.cpp">
+      <Filter>third_party</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -59,5 +92,10 @@
     <Image Include="res\FaceRecognitionTest.ico">
       <Filter>资源文件</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="third_party\wtl\WltRS.lib">
+      <Filter>third_party\WtlRs\lib</Filter>
+    </Library>
   </ItemGroup>
 </Project>

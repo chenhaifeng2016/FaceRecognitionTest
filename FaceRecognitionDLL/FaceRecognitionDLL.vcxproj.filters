@@ -13,19 +13,19 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="第三方">
-      <UniqueIdentifier>{96670d1d-af81-4bac-a057-031988567130}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="第三方\libcurl">
-      <UniqueIdentifier>{0d443ad8-1b48-4e53-9c87-9856f66bf9dd}</UniqueIdentifier>
-    </Filter>
     <Filter Include="模块定义文件">
       <UniqueIdentifier>{223f0828-bb99-4efa-8d6b-f0177e5619cc}</UniqueIdentifier>
     </Filter>
     <Filter Include="文档">
       <UniqueIdentifier>{421acc2d-6d72-4c0b-9655-ee67e161d5ad}</UniqueIdentifier>
     </Filter>
-    <Filter Include="第三方\json">
+    <Filter Include="third_party">
+      <UniqueIdentifier>{96670d1d-af81-4bac-a057-031988567130}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\libcurl">
+      <UniqueIdentifier>{0d443ad8-1b48-4e53-9c87-9856f66bf9dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\json">
       <UniqueIdentifier>{01e9a8a4-1bd8-4331-bfb4-1cc53bd724b1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -49,7 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="json.txt">
-      <Filter>第三方\json</Filter>
+      <Filter>third_party\json</Filter>
     </Text>
   </ItemGroup>
 </Project>

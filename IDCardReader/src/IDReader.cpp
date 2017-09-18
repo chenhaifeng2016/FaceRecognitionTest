@@ -1,4 +1,3 @@
-
 #include "IDReader.h"
 
 
@@ -183,4 +182,8 @@ bool IDReader::ReadIDCard(IDCARD* id) {
 
 
 	return true;
+}
+
+void IDReader::UnInit() {
+	com.ClosePort();
 }

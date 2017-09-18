@@ -7,6 +7,14 @@
 #include "FaceRecognitionTestDlg.h"
 #include "afxdialogex.h"
 
+
+//身份证
+#include "../IDCardReader/include/IDCardReader.h"
+#include "third_party\wtl\WltRS.h"
+
+//人脸识别服务
+
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -99,46 +107,11 @@ void CFaceRecognitionTestDlg::OnBnClickedButton1()
 void CFaceRecognitionTestDlg::OnBnClickedButton2()
 {
 
-	if (!reader.Init("COM3")) {
-		AfxMessageBox("打开端口失败");
-		return;
-	}
-	AfxMessageBox("打开端口成功");
+	
+
+	
 
 	/*
-	hComm = CreateFile("com3", GENERIC_READ | GENERIC_WRITE, 0, NULL, OPEN_EXISTING, 0, 0);
-	if (hComm == INVALID_HANDLE_VALUE)
-	{
-	AfxMessageBox("打开串口失败");
-	return;
-	}
-
-	SetupComm(hComm, 4096, 4096);
-
-	DCB dcb;
-	GetCommState(hComm, &dcb);
-
-	dcb.DCBlength = sizeof(dcb);
-	dcb.BaudRate = CBR_115200;
-	dcb.StopBits = ONESTOPBIT;
-	SetCommState(hComm, &dcb);
-
-	PurgeComm(hComm, PURGE_RXABORT | PURGE_TXCLEAR | PURGE_RXCLEAR | PURGE_TXABORT);//清空缓存
-
-	COMMTIMEOUTS ct;
-	ct.ReadIntervalTimeout = 0;
-	ct.ReadTotalTimeoutConstant = 5000;
-	ct.ReadTotalTimeoutMultiplier = 500;
-	ct.WriteTotalTimeoutConstant = 5000;
-	ct.WriteTotalTimeoutMultiplier = 500;
-
-
-	SetCommTimeouts(hComm, &ct);//设置超时
-
-	AfxMessageBox("打开串口成功");
-	*/
-
-
 
 	char data[256] = { 0 };
 	int data_len = 0;
@@ -156,50 +129,13 @@ void CFaceRecognitionTestDlg::OnBnClickedButton2()
 	CString msg;
 	msg.Format("读身份证号码成功 %s", buf);
 	AfxMessageBox(msg);
-
-
-	/*
-
-	DWORD dwToWrite = 8;
-	DWORD dwWritten = 0;
-
-
-
-	if (WriteFile(hComm, buf, dwToWrite, &dwWritten, NULL))
-	{
-	TRACE("写成功...\n");
-
-	DWORD dwRead;
-
-
-	memset(buf, 0x00, sizeof(buf));
-	DWORD dwNeedRead = 38 + 5;
-	if (ReadFile(hComm, buf, 1, &dwRead, NULL))
-	{
-
-	DWORD dwError;
-	COMSTAT cs = { 0 };
-
-	ClearCommError(hComm, &dwError, &cs);
-	int read_len = cs.cbInQue;
-
-	ReadFile(hComm, buf + 1, dwNeedRead-1, &dwRead, NULL);
-	TRACE("读成功...\n");
-	}
-	else
-	{
-	TRACE("读失败...\n");
-	}
-	}
-	else
-	{
-	TRACE("写失败...\n");
-	}
 	*/
+
+	
 
 
 	IDCARD id;
-	if (!reader.ReadIDCard(&id)) {
+	if (!ReadIDCard("com3", &id)) {
 		AfxMessageBox("读身份证全信息失败");
 		return;
 	}
@@ -247,7 +183,7 @@ void CFaceRecognitionTestDlg::OnBnClickedButton2()
 
 	m_image.SetBitmap(m_hBitmap);
 
-	CString msg;
-	msg.Format("姓名:%s, 身份证号码:%s", name, idno);
-	AfxMessageBox(msg);
+	//CString msg;
+	//msg.Format("姓名:%s, 身份证号码:%s", name, idno);
+	//AfxMessageBox(msg);
 }
