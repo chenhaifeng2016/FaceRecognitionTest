@@ -1,2 +1,5 @@
 https://github.com/Tencent/rapidjson
+http://rapidjson.org/zh-cn/
+不需要编译，直接引用头文件就可以了
+
 https://github.com/nlohmann/json

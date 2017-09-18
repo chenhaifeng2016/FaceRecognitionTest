@@ -95,7 +95,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
-      <AdditionalLibraryDirectories>E:\FaceRecognition\FaceRecognitionTest\IDCardReader\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>E:\FaceRecognition\FaceRecognitionTest\IDCardReader\lib;E:\FaceRecognition\FaceRecognitionTest\FaceRecognitionDLL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -144,7 +144,7 @@
       <SubSystem>Windows</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>E:\FaceRecognition\FaceRecognitionTest\IDCardReader\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>E:\FaceRecognition\FaceRecognitionTest\IDCardReader\lib;E:\FaceRecognition\FaceRecognitionTest\FaceRecognitionDLL\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <Midl>
       <MkTypLibCompatible>false</MkTypLibCompatible>
@@ -184,9 +184,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="ReadMe.txt" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClInclude Include="..\FaceRecognitionDLL\include\FaceRecognition.h" />
     <ClInclude Include="..\IDCardReader\include\IDCardReader.h" />
     <ClInclude Include="FaceRecognitionTest.h" />
     <ClInclude Include="FaceRecognitionTestDlg.h" />

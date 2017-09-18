@@ -25,8 +25,14 @@
     <Filter Include="third_party\libcurl">
       <UniqueIdentifier>{0d443ad8-1b48-4e53-9c87-9856f66bf9dd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="third_party\json">
+    <Filter Include="third_party\Tecent RapidJSON">
       <UniqueIdentifier>{01e9a8a4-1bd8-4331-bfb4-1cc53bd724b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\libcurl\include">
+      <UniqueIdentifier>{473ff4ed-bfe5-457f-a4b3-308463f67b37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\libcurl\lib">
+      <UniqueIdentifier>{dd9a76e9-34c5-4690-885f-a60b99d7ee88}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -49,7 +55,15 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="json.txt">
-      <Filter>third_party\json</Filter>
+      <Filter>third_party\Tecent RapidJSON</Filter>
     </Text>
+    <Text Include="libcurl.txt">
+      <Filter>third_party\libcurl</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="third_party\curl-7.55.1\build\Win32\VC14\DLL Release\libcurl.lib">
+      <Filter>third_party\libcurl\lib</Filter>
+    </Library>
   </ItemGroup>
 </Project>

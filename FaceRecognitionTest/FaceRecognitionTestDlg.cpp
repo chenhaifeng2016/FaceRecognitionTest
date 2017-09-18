@@ -13,6 +13,7 @@
 #include "third_party\wtl\WltRS.h"
 
 //人脸识别服务
+#include "../FaceRecognitionDLL/include/FaceRecognition.h"
 
 
 #ifdef _DEBUG
@@ -41,6 +42,7 @@ BEGIN_MESSAGE_MAP(CFaceRecognitionTestDlg, CDialogEx)
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDC_BUTTON1, &CFaceRecognitionTestDlg::OnBnClickedButton1)
 	ON_BN_CLICKED(IDC_BUTTON2, &CFaceRecognitionTestDlg::OnBnClickedButton2)
+	ON_BN_CLICKED(IDC_BUTTON3, &CFaceRecognitionTestDlg::OnBnClickedButton3)
 END_MESSAGE_MAP()
 
 
@@ -186,4 +188,13 @@ void CFaceRecognitionTestDlg::OnBnClickedButton2()
 	//CString msg;
 	//msg.Format("姓名:%s, 身份证号码:%s", name, idno);
 	//AfxMessageBox(msg);
+}
+
+
+void CFaceRecognitionTestDlg::OnBnClickedButton3()
+{
+	char pIn[10] = { 0 };
+	char pOut[100] = { 0 };
+
+	CAM_Open(pIn, pOut);
 }

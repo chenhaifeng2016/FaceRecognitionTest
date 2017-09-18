@@ -1,9 +1,28 @@
 #include "../include/FaceRecognition.h"
 
+//json
+#include "../third_party/rapidjson/include/rapidjson/document.h"
+#include "../third_party/rapidjson/include/rapidjson/stringbuffer.h"
 
+//libcurl
+#include "../third_party/curl-7.55.1/include/curl/curl.h"
 
 
 int WINAPI CAM_Open(char *pIn, char* pOut) {
+	
+	const char* json = "{\"project\":\"rapidjson\",\"stars\":10}";
+
+	rapidjson::Document doc;
+	doc.Parse(json);
+
+	rapidjson::Value& s = doc["project"];
+	
+	s.IsString();
+	OutputDebugString(s.GetString());
+
+	// libcurl
+	curl_global_init(CURL_GLOBAL_ALL);
+
 	return 1;
 }
 

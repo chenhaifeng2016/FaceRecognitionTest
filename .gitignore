@@ -244,3 +244,7 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 /IDCardReader/lib
+/FaceRecognitionDLL/lib
+/FaceRecognitionDLL/third_party/curl-7.55.1
+/FaceRecognitionDLL/third_party/curl-7.55.1.zip
+/FaceRecognitionDLL/third_party/rapidjson/
