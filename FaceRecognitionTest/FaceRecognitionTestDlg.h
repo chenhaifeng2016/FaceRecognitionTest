@@ -5,6 +5,9 @@
 #pragma once
 #include "afxwin.h"
 
+//OpenCV
+#include "opencv2/opencv.hpp"
+
 
 // CFaceRecognitionTestDlg ¶Ô»°¿ò
 class CFaceRecognitionTestDlg : public CDialogEx

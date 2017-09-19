@@ -16,52 +16,57 @@
 
 int WINAPI CAM_Open(char *pIn, char* pOut) {
 	
-	const char* json = "{\"project\":\"rapidjson\",\"stars\":10}";
-
-	rapidjson::Document doc;
-	doc.Parse(json);
-
-	rapidjson::Value& s = doc["project"];
 	
-	s.IsString();
-	std::string str = s.GetString();
 
 
-	/*
-	POST / faceid / v1 / verify HTTP / 1.1
-	Host: 172.16.2.146 : 9000
-	Cache - Control : no - cache
-	Postman - Token : 25251790 - a2db - 8a6d - 5247 - be6cd79fd997
-	Content - Type : multipart / form - data; boundary = ----WebKitFormBoundary7MA4YWxkTrZu0gW
-
-	------WebKitFormBoundary7MA4YWxkTrZu0gW
-	Content - Disposition: form - data; name = "image_best"; filename = "camera.jpg"
-	Content - Type: image / jpeg
-
-
-	------WebKitFormBoundary7MA4YWxkTrZu0gW
-	Content - Disposition : form - data; name = "image_idcard"; filename = "id.bmp"
-	Content - Type: image / bmp
-
-
-	------WebKitFormBoundary7MA4YWxkTrZu0gW--*/
+	
 	Poco::Net::HTTPRequest request(Poco::Net::HTTPRequest::HTTP_POST, "/faceid/v1/verify", Poco::Net::HTTPMessage::HTTP_1_1);
+	
 	Poco::Net::HTMLForm form;
 	form.setEncoding(Poco::Net::HTMLForm::ENCODING_MULTIPART);
-	form.set("entry1", "value1");
-	form.set("entry2", "value2");
-	form.addPart("file", new Poco::Net::FilePartSource("/home/abc/Pictures/sample.png"));
+	
+	form.addPart("image_idcard", new Poco::Net::FilePartSource("E:\\FaceRecognition\\FaceRecognitionTest\\test_images\\id.bmp"));
+	form.addPart("image_best", new Poco::Net::FilePartSource("E:\\FaceRecognition\\FaceRecognitionTest\\test_images\\camera.jpg"));
 	form.prepareSubmit(request);
 
 	Poco::Net::HTTPClientSession *httpSession = new Poco::Net::HTTPClientSession("172.16.2.146", 9000);
-	httpSession->setTimeout(Poco::Timespan(20, 0));
+	//httpSession->setTimeout(Poco::Timespan(20, 0));
 	form.write(httpSession->sendRequest(request));
 
 	Poco::Net::HTTPResponse res;
 	std::istream &is = httpSession->receiveResponse(res);
-	Poco::StreamCopier::copyStream(is, std::cout);
-	
 
+	std::istreambuf_iterator<char> eos;
+	std::string jsonResult(std::istreambuf_iterator<char>(is), eos);
+	
+	/*
+	{
+    "request_id": "1387489868,5bcc08bc-5765-406c-aa70-73ce5bb8846f",
+    "result_idcard": {
+        "index1": 0,
+        "index2": 0,
+        "confidence": 84.52791,
+        "thresholds": {
+            "1e-3": 65.3,
+            "1e-4": 71.8,
+            "1e-5": 76.5,
+            "1e-6": 79.9
+        }
+    },
+    "time_used": 907
+}*/
+
+	rapidjson::Document doc;
+	doc.Parse(jsonResult.c_str());
+
+	rapidjson::Value& request_id_val = doc["request_id"];
+	std::string request_id = request_id_val.GetString();
+
+	//这里需要处理如何取子节点的数据
+	rapidjson::Value& s = doc["confidence"];
+
+	
+	double confidence = s.GetDouble();
 	return 1;
 }
 

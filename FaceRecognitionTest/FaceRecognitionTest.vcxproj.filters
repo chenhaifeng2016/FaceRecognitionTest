@@ -37,6 +37,15 @@
     <Filter Include="third_party\WtlRs\lib">
       <UniqueIdentifier>{0b03af01-65b4-46b0-9ae5-6b52fcd9877c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="third_party\OpenCV">
+      <UniqueIdentifier>{8c244055-d9da-4aba-94bb-d768220e6b17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\OpenCV\include">
+      <UniqueIdentifier>{d9058107-eda8-4d93-8516-31a30399ff93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\OpenCV\lib">
+      <UniqueIdentifier>{7567b115-a2ae-4ff3-8750-632295aa3999}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -97,5 +106,10 @@
     <Library Include="third_party\wtl\WltRS.lib">
       <Filter>third_party\WtlRs\lib</Filter>
     </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="OpenCV.txt">
+      <Filter>third_party\OpenCV</Filter>
+    </Text>
   </ItemGroup>
 </Project>
