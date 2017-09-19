@@ -1,7 +1,7 @@
 #ifndef BARCODE_H
 #define BARCODE_H
 
-#include <windows.h>
+//#include <windows.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -45,7 +45,7 @@ extern "C" {
 	0：成功
 	1：失败
 	*/
-	int WINAPI CAM_Open(char *pIn, char* pOut);
+	int __stdcall CAM_Open(char *pIn, char* pOut);
 
 	/*
 	函数功能：
@@ -60,7 +60,7 @@ extern "C" {
 	0：成功
 	1：失败
 	*/
-	int CAM_Close(char * pIn, char * pOut);
+	int __stdcall CAM_Close(char * pIn, char * pOut);
 
 	/*
 	函数功能：
@@ -75,7 +75,7 @@ extern "C" {
 	1：设备启动中
 	其它：错误码
 	*/
-	int CAM_Status(char* pIn, char* pOut);
+	int __stdcall CAM_Status(char* pIn, char* pOut);
 
 	/*
 	函数功能：
@@ -92,7 +92,7 @@ extern "C" {
 	0：成功
 	1：失败
 	*/
-	int CAM_Notify(int iFlag, char *pIn, char* pOut);
+	int __stdcall CAM_Notify(int iFlag, char *pIn, char* pOut);
 
 
 	/*
@@ -108,7 +108,7 @@ extern "C" {
 	0：成功
 	1：失败
 	*/
-	int CAM_GetPhotoInfo(char* pIn, char* pOut, int iDelay);
+	int __stdcall CAM_GetPhotoInfo(char* pIn, char* pOut, int iDelay);
 
 	/*
 	函数功能：
@@ -122,7 +122,7 @@ extern "C" {
 	0：成功
 	1：失败
 	*/
-	int WINAPI CAM_Reset(char * pIn, char* pOut);
+	int __stdcall CAM_Reset(char * pIn, char* pOut);
 
 	/*
 	函数功能：
@@ -134,7 +134,7 @@ extern "C" {
 	返回值：
 	无
 	*/
-	void WINAPI CAM_FreePhotoInfo(char* pIn);
+	void __stdcall CAM_FreePhotoInfo(char* pIn);
 	
 
 #ifdef __cplusplus

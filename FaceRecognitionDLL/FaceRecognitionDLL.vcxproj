@@ -30,6 +30,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -37,6 +38,7 @@
     <PlatformToolset>v140</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -89,12 +91,14 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;FACERECOGNITIONDLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>E:\FaceRecognition\FaceRecognitionTest\FaceRecognitionDLL\third_party\curl-7.55.1\include;E:\FaceRecognition\FaceRecognitionTest\FaceRecognitionDLL\third_party\poco-1.7.9\Foundation\include;E:\FaceRecognition\FaceRecognitionTest\FaceRecognitionDLL\third_party\poco-1.7.9\Net\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ImportLibrary>./lib/$(TargetName)D.lib</ImportLibrary>
       <ModuleDefinitionFile>FaceRecognition.def</ModuleDefinitionFile>
+      <AdditionalLibraryDirectories>E:\FaceRecognition\FaceRecognitionTest\FaceRecognitionDLL\third_party\poco-1.7.9\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -121,6 +125,7 @@
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;FACERECOGNITIONDLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>E:\FaceRecognition\FaceRecognitionTest\FaceRecognitionDLL\third_party\curl-7.55.1\include;E:\FaceRecognition\FaceRecognitionTest\FaceRecognitionDLL\third_party\poco-1.7.9\Foundation\include;E:\FaceRecognition\FaceRecognitionTest\FaceRecognitionDLL\third_party\poco-1.7.9\Net\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -129,6 +134,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <ModuleDefinitionFile>FaceRecognition.def</ModuleDefinitionFile>
       <ImportLibrary>./lib/$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>E:\FaceRecognition\FaceRecognitionTest\FaceRecognitionDLL\third_party\poco-1.7.9\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -157,14 +163,12 @@
     <ClInclude Include="include\FaceRecognition.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="import_lib.cpp" />
     <ClCompile Include="src\FaceRecognition.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="json.txt" />
     <Text Include="libcurl.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="third_party\curl-7.55.1\build\Win32\VC14\DLL Release\libcurl.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

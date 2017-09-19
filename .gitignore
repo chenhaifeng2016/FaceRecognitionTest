@@ -248,3 +248,7 @@ ModelManifest.xml
 /FaceRecognitionDLL/third_party/curl-7.55.1
 /FaceRecognitionDLL/third_party/curl-7.55.1.zip
 /FaceRecognitionDLL/third_party/rapidjson/
+/test_images
+/FaceRecognitionDLL/third_party/curl/
+/FaceRecognitionDLL/third_party/poco-1.7.9
+/FaceRecognitionDLL/third_party

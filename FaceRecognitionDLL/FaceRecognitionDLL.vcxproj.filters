@@ -34,6 +34,15 @@
     <Filter Include="third_party\libcurl\lib">
       <UniqueIdentifier>{dd9a76e9-34c5-4690-885f-a60b99d7ee88}</UniqueIdentifier>
     </Filter>
+    <Filter Include="third_party\POCO">
+      <UniqueIdentifier>{c9dc4a0f-4863-473f-afdd-6a2361b109e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\POCO\include">
+      <UniqueIdentifier>{817e497e-5656-4a14-ae78-e3488241167b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="third_party\POCO\lib">
+      <UniqueIdentifier>{eabdf2b5-23e2-4ce8-ba2f-aa43b977f671}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="FaceRecognition.def">
@@ -52,6 +61,9 @@
     <ClCompile Include="src\FaceRecognition.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="import_lib.cpp">
+      <Filter>third_party</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="json.txt">
@@ -60,10 +72,5 @@
     <Text Include="libcurl.txt">
       <Filter>third_party\libcurl</Filter>
     </Text>
-  </ItemGroup>
-  <ItemGroup>
-    <Library Include="third_party\curl-7.55.1\build\Win32\VC14\DLL Release\libcurl.lib">
-      <Filter>third_party\libcurl\lib</Filter>
-    </Library>
   </ItemGroup>
 </Project>
