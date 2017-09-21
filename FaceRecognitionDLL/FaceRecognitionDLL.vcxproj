@@ -99,6 +99,7 @@
       <ImportLibrary>./lib/$(TargetName)D.lib</ImportLibrary>
       <ModuleDefinitionFile>FaceRecognition.def</ModuleDefinitionFile>
       <AdditionalLibraryDirectories>E:\FaceRecognition\FaceRecognitionTest\FaceRecognitionDLL\third_party\poco-1.7.9\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <OutputFile>$(OutDir)$(TargetName)D$(TargetExt)</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

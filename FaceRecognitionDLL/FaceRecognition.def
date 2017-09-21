@@ -7,3 +7,4 @@ CAM_Notify
 CAM_GetPhotoInfo
 CAM_Reset
 CAM_FreePhotoInfo
+FaceRecognition

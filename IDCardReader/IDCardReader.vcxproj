@@ -97,6 +97,7 @@
       <AdditionalLibraryDirectories>D:\Boost\1.59\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <ImportLibrary>./lib/$(TargetName)D.lib</ImportLibrary>
       <ModuleDefinitionFile>IDCardReader.def</ModuleDefinitionFile>
+      <OutputFile>$(OutDir)$(TargetName)D$(TargetExt)</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">

@@ -102,7 +102,12 @@ HCURSOR CFaceRecognitionTestDlg::OnQueryDragIcon()
 
 void CFaceRecognitionTestDlg::OnBnClickedButton1()
 {
-	// TODO: 在此添加控件通知处理程序代码
+	int confidence = 0;
+	int ret = 0;
+
+	ret = FaceRecognition("E:\\FaceRecognition\\FaceRecognitionTest\\test_images\\id.bmp", "E:\\FaceRecognition\\FaceRecognitionTest\\test_images\\camera.jpg", &confidence);
+
+	TRACE("confidence = %d\n", confidence);
 }
 
 
@@ -145,7 +150,7 @@ void CFaceRecognitionTestDlg::OnBnClickedButton2()
 	int len = WideCharToMultiByte(CP_ACP, 0, (LPCWCH)id.name, 30, NULL, 0, NULL, NULL);
 	char * name = new char[len];
 	WideCharToMultiByte(CP_ACP, 0, (LPCWCH)id.name, 30, name, len, NULL, NULL);
-	*/
+	*/	
 	char name[100] = { 0 };
 	WideCharToMultiByte(CP_ACP, 0, (LPCWCH)id.name, sizeof(id.name), name, sizeof(id.name) / 2, NULL, NULL);
 
@@ -193,8 +198,29 @@ void CFaceRecognitionTestDlg::OnBnClickedButton2()
 
 void CFaceRecognitionTestDlg::OnBnClickedButton3()
 {
+	/*
 	char pIn[10] = { 0 };
 	char pOut[100] = { 0 };
 
 	CAM_Open(pIn, pOut);
+	*/
+	/*
+	Capture = cvCreateCameraCapture(0);
+	if (Capture == 0)
+	{
+		MessageBox(_T("无法连接摄像头！！！"));
+		return;
+	}
+	frame = cvQueryFrame(Capture); //从摄像头或者文件中抓取并返回一帧  
+	CDC * pDC = GetDlgItem(IDC_CAMERA_IMAGE)->GetDC();//GetDlgItem(IDC_PIC_STATIC)意思为获取显示控件的句柄（句柄就是指针），获取显示控件的DC  
+	CRect rect;
+	GetDlgItem(IDC_CAMERA_IMAGE)->GetClientRect(&rect);
+	HDC hDC = pDC->GetSafeHdc();//获取显示控件的句柄  
+
+	CvvImage m_CvvImage;
+	m_CvvImage.CopyOf(frame, 1); //复制该帧图像     
+	m_CvvImage.DrawToHDC(hDC, &rect); //显示到设备的矩形框内  
+	ReleaseDC(pDC);
+	*/
+
 }

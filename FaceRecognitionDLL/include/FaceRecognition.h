@@ -135,6 +135,9 @@ extern "C" {
 	нч
 	*/
 	void __stdcall CAM_FreePhotoInfo(char* pIn);
+
+
+	int __stdcall FaceRecognition(const char* id, const char* camera, int * confidence );
 	
 
 #ifdef __cplusplus

@@ -192,6 +192,7 @@
   <ItemGroup>
     <ClInclude Include="..\FaceRecognitionDLL\include\FaceRecognition.h" />
     <ClInclude Include="..\IDCardReader\include\IDCardReader.h" />
+    <ClInclude Include="CvvImage.h" />
     <ClInclude Include="FaceRecognitionTest.h" />
     <ClInclude Include="FaceRecognitionTestDlg.h" />
     <ClInclude Include="Resource.h" />
@@ -200,6 +201,7 @@
     <ClInclude Include="third_party\wtl\WltRS.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CvvImage.cpp" />
     <ClCompile Include="FaceRecognitionTest.cpp" />
     <ClCompile Include="FaceRecognitionTestDlg.cpp" />
     <ClCompile Include="import_lib.cpp" />

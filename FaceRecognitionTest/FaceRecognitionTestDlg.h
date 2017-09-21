@@ -7,6 +7,7 @@
 
 //OpenCV
 #include "opencv2/opencv.hpp"
+#include "CvvImage.h"
 
 
 // CFaceRecognitionTestDlg ¶Ô»°¿ò
@@ -39,4 +40,7 @@ public:
 	afx_msg void OnBnClickedButton2();
 	CStatic m_image;
 	afx_msg void OnBnClickedButton3();
+
+	CvCapture* Capture;
+	IplImage* frame;
 };

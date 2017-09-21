@@ -37,13 +37,13 @@
     <Filter Include="third_party\WtlRs\lib">
       <UniqueIdentifier>{0b03af01-65b4-46b0-9ae5-6b52fcd9877c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="third_party\OpenCV">
+    <Filter Include="third_party\OpenCV2">
       <UniqueIdentifier>{8c244055-d9da-4aba-94bb-d768220e6b17}</UniqueIdentifier>
     </Filter>
-    <Filter Include="third_party\OpenCV\include">
+    <Filter Include="third_party\OpenCV2\include">
       <UniqueIdentifier>{d9058107-eda8-4d93-8516-31a30399ff93}</UniqueIdentifier>
     </Filter>
-    <Filter Include="third_party\OpenCV\lib">
+    <Filter Include="third_party\OpenCV2\lib">
       <UniqueIdentifier>{7567b115-a2ae-4ff3-8750-632295aa3999}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -72,6 +72,9 @@
     <ClInclude Include="..\FaceRecognitionDLL\include\FaceRecognition.h">
       <Filter>third_party\FaceRecognitionDLL\include</Filter>
     </ClInclude>
+    <ClInclude Include="CvvImage.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FaceRecognitionTest.cpp">
@@ -85,6 +88,9 @@
     </ClCompile>
     <ClCompile Include="import_lib.cpp">
       <Filter>third_party</Filter>
+    </ClCompile>
+    <ClCompile Include="CvvImage.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -109,7 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="OpenCV.txt">
-      <Filter>third_party\OpenCV</Filter>
+      <Filter>third_party\OpenCV2</Filter>
     </Text>
   </ItemGroup>
 </Project>

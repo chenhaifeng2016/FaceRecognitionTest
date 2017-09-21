@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui multimedia multimediawidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -29,3 +29,20 @@ SOURCES += main.cpp\
 HEADERS  += mainwindow.h
 
 FORMS    += mainwindow.ui
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../IDCardReader/lib/ -lIDCardReader
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../IDCardReader/lib/ -lIDCardReaderd
+
+INCLUDEPATH += $$PWD/../../IDCardReader/include
+DEPENDPATH += $$PWD/../../IDCardReader/include
+
+win32: LIBS += -L$$PWD/../../FaceRecognitionTest/third_party/wtl/ -lWltRS
+
+INCLUDEPATH += $$PWD/../../FaceRecognitionTest/third_party/wtl
+DEPENDPATH += $$PWD/../../FaceRecognitionTest/third_party/wtl
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../../FaceRecognitionDLL/lib/ -lFaceRecognitionDLL
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../../FaceRecognitionDLL/lib/ -lFaceRecognitionDLLd
+
+INCLUDEPATH += $$PWD/../../FaceRecognitionDLL/include
+DEPENDPATH += $$PWD/../../FaceRecognitionDLL/include
